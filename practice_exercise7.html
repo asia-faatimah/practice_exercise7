@@ -1,0 +1,108 @@
+
+  
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise 7</title>
+
+    <style>
+    /* 
+ The HTML code includes a parent div with the class flex-container. Its direct children are 3 divs
+with the class flex-item and one additional class, unique to each one of them.
+2. Preview the HTML page in the browser. All elements are stacked vertically, following the normal
+flow of HTML.
+3. To arrange the child divs horizontally, change the display of the parent element to flex.
+.flex-container { display:flex; }
+4. Preview your html file in the browser. The default flex direction is row and consequently the
+direct children of the flex-container div are now arranged horizontally in a row. These divs are
+now flex items.
+5. Force the flex items to expand to fill the available space in the flex container. Use the flex
+property to turn on the flex grow. The flex property is given to the flex items and has 3 values:
+flex: flex-grow flex-shrink flex-basis;
+Flex grow controls if and how the flex-items expand to fill the flex container
+Flex shrink controls if and how the flex-items shrink to fit in the flex container
+Flex basis is the initial size of the flex item before growing and shrinking.
+Give the flex items: flex-item{ flex: 1 0 auto;} which will make them grow, not shrink,
+and will take their assigned width size.
+MMP 240 WEB DESIGN KAISAR
+6. Preview in the browser. The flex items should stretch now to fill the flex container.
+7. The first flex item (class lead) must be twice the size of the other 3 flex items. To make it
+happen, make its flex-grow twice the size.
+Try first lead { flex: 2 0 auto; }. A higher integer values of flex-grow act as a ratio
+that applies more space within that item.
+Preview in the browser. The first flex item should now be larger than the rest but not twice as
+large. This is because, even so it received twice as much of the remaining space of the flex
+container as the rest of the flex items, it is not enough to make it twice as large.
+8. To make the first flex item twice the size of the other 3 flex items, change the flex basis to 0 for
+all flex items:
+flex-item{ flex: 1 0 0;}
+lead { flex: 2 0 0; }
+When the flex-basis is 0, items get sized proportionally according to the flex ratio.
+9. Preview your HTML in the browser. Your layout is complete*/
+
+    #wrapper{
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .flex-container{
+        display: flex;
+    }
+
+    .flex-item{
+      width:200px;
+      border:solid 1px gray;
+      padding:5px;
+      border-radius: 10px;
+      margin:0.5em;
+      flex: 1 0 0;
+      
+
+    }
+
+    .lead{
+      border:none;
+      flex: 2 0 0;
+    }
+
+    .img-responsive{
+      width:100%;
+    }
+
+    .lead p{
+      font-size: larger;
+    }
+
+    </style>
+
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <div class="flex-container">
+
+        <div class="flex-item lead">
+          <h1>Awesome Flex layout</h1>
+          <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+
+        <div class="flex-item card1">
+          <img src="http://via.placeholder.com/300x200" alt="placeholder" class="img-responsive">
+          <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+
+        <div class="flex-item card2">
+          <img src="http://via.placeholder.com/300x200" alt="placeholder" class="img-responsive">
+          <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+
+        <div class="flex-item card3">
+          <img src="http://via.placeholder.com/300x200" alt="placeholder" class="img-responsive">
+          <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+
+      </div> <!-- closing .flex-container -->
+  </div> <!-- closing #wrapper -->
+</body>
+</html>
+
